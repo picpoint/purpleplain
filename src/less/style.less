@@ -1,0 +1,65 @@
+@import "smart-grid.less";
+@import "var.less";
+@import "fonts.less";
+
+.reset();
+
+.debug{
+  .debug(rgba(0, 0, 0, 0.1), 1px solid blue);
+};
+
+.firstscreen {
+  background: @firstscreencolor;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  &__wrap {
+    border: @border;
+    display: flex;
+    flex-direction: column;
+    width: 82%;
+  }
+  &__topblock {
+    border: @border;
+    display: flex;
+    height: 80%;
+  }
+  &__topblockleft {
+    border: @border;
+    display: flex;
+    width: 74%;
+    background-image: url("../pict/img/img_main_first_screen_desctop.svg");
+    background-size: cover;
+  }
+  &__blocktext {
+    border: @border;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 100%;
+    color: white;
+    font-family: 'Exo 2', sans-serif;
+  }
+  &__purple {
+    //  border: @border;
+    font-size: 2.5rem;
+    margin: 0 170px 5px 0;
+    font-weight: bolder;
+  }
+  &__development {
+    //border: @border;
+    font-size: 1.8rem;
+    margin: 50px 50px 135px 0;
+  }
+  &__topblockright {
+    border: @border;
+    width: 26%;
+  }
+
+
+  &__bottomblock {
+    border: @border;
+    height: 20%;
+  }
+}
