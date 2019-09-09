@@ -19,22 +19,45 @@ body {
   justify-content: center;
   height: 100vh;
   &__wrap {
-    //border: @border;
+    border: @border;
     display: flex;
     flex-direction: column;
     width: 82%;
+    transition: @transitionfast;
+    .xxl-block({
+      width: 100%;
+      transition: @transitionfast;
+    });
   }
   &__topblock {
-    //border: @border;
+    border: @border;
     display: flex;
-    height: 76%;
+    height: 80%;
+    .lg-block({
+      flex-direction: column-reverse;
+      justify-content: flex-end;
+    });
   }
   &__topblockleft {
-    //border: @border;
+    border: @border;
     display: flex;
     width: 73%;
     background-image: url("../pict/img/img_main_first_screen_desctop.svg");
     background-size: cover;
+    transition: @transitionfast;
+    .xxl-block({
+      width: 80%;
+      background-position: 100% 100%;
+      transition: @transitionfast;
+    });
+    .lg-block({
+      height: 100%;
+      align-self: flex-end;
+      background-image: url("../pict/img/main_picture_full.svg");
+      background-size: cover;
+      background-position: 80% 80%;
+      transition: @transitionfast;
+    });
   }
   &__blocktext {
     //border: @border;
@@ -48,23 +71,37 @@ body {
   }
   &__purple {
     //border: @border;
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     font-weight: bolder;
-    margin: 25% 13% 0 0;
+    margin: 25% 10% 0 0;
+    .xxl-block({
+      font-size: 2.1rem;
+    });
   }
   &__development {
     //border: @border;
-    font-size: 1.8rem;
-    margin: 5% 3% 0 0;
+    font-size: 1.6rem;
+    margin: 5% 2% 0 0;
+    .xxl-block({
+      font-size: 1.6rem;
+    });
   }
   &__topblockright {
-    //border: @border;
+    border: @border;
     display: flex;
     flex-direction: column;
     width: 27%;
+    .xxl-block({
+      width: 20%;
+    });
+    .lg-block({
+      width: 100%;
+      height: 50px;
+      flex-direction: row;
+    });
   }
   &__logo {
-    //border: @border;
+    border: @border;
     height: 28%;
     display: flex;
     justify-content: center;
@@ -74,6 +111,12 @@ body {
     background-size: 90px 90px;
     background-position: center;
     margin-top: 20px;
+    .lg-block({
+      width: 50px;
+      height: 50px;
+      background-size: 30px 30px;
+      margin: 0 0 0 10px;
+    });
   }
   &__menu {
     //border: @border;
@@ -81,6 +124,9 @@ body {
     height: 72%;
     width: 100%;
     color: white;
+    .lg-block({
+      display: none;
+    });
   }
   &__list {
     //border: @border;
