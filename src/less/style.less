@@ -19,7 +19,7 @@ body {
   justify-content: center;
   height: 100vh;
   &__wrap {
-    border: @border;
+    //border: @border;
     display: flex;
     flex-direction: column;
     width: 82%;
@@ -63,6 +63,13 @@ body {
     .md-block({
       background-size: 80%;
       background-position: 120% 100%;
+    });
+    .sm-block({
+      background-position: 120% 70%;
+    });
+    .xs-block({
+      background-position: 120% 70%;
+      background-size: 100%;
     });
   }
   &__blocktext {
@@ -108,18 +115,28 @@ body {
     display: none;
     transition: @transitionfast;
     .lg-block({
-      border: @border;
+      //border: @border;
       display: flex;
       font-size: 2.6rem;
       font-weight: bolder;
       font-family: 'Exo 2', sans-serif;
-      width: 40%;
+      width: 50%;
       transition: @transitionfast;
     });
     .md-block({
       font-size: 2.2rem;
-      transition: @transitionfast;
       width: 60%;
+      transition: @transitionfast;
+    });
+    .sm-block({
+      font-size: 2rem;
+      width: 80%;
+      transition: @transitionfast;
+    });
+    .xs-block({
+      font-size: 1.5rem;
+      width: 85%;
+      transition: @transitionfast;
     });
   }
   &__topblockright {
@@ -216,10 +233,10 @@ body {
   &__bottomblock {
     //border: @border;
     display: flex;
-    height: 24%;
+    height: 27%;
   }
   &__sendreq {
-    border: @border;
+    //border: @border;
     display: flex;
     flex-direction: column;
     margin-left: 70px;
@@ -237,13 +254,28 @@ body {
       font-size: 1.7rem;
       font-family: 'Exo 2', sans-serif;
       cursor: pointer;
-      margin: 20px 0;
+      margin: 10px 0;
     }
     a:nth-child(1) {
-      border: @border;
+      //border: @border;
       color: @yellow;
       border-bottom: 4px solid @purple;
       font-weight: bolder;
+      transition: @transitionfast;
+      .md-block({
+        font-size: 2.5rem;
+        margin-top: 60px;
+        transition: @transitionfast;
+      });
+      .sm-block({
+        font-size: 2.2rem;
+        margin-top: 40px;
+        transition: @transitionfast;
+      });
+      .xs-block({
+        font-size: 1.5rem;
+        transition: @transitionfast;
+      });
     }
     a:nth-child(2) {
       color: white;
@@ -253,10 +285,11 @@ body {
       });
     }
     span:nth-child(3) {
+      //border: @border;
       display: none;
       transition: @transitionfast;
       .lg-block({
-        border: @border;
+        //border: @border;
         display: flex;
         color: white;
         font-size: 2.1rem;
@@ -265,6 +298,21 @@ body {
       });
       .md-block({
         display: none;
+        transition: @transitionfast;
+      });
+    }
+    img {
+      display: none;
+      align-self: flex-end;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: @transitionfast;
+      .lg-block({
+        display: flex;
+        transition: @transitionfast;
+      });
+      .sm-block({
+        margin-right: 30px;
         transition: @transitionfast;
       });
     }
