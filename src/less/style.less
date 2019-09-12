@@ -12,6 +12,26 @@ body {
   .debug(rgba(0, 0, 0, 0.1), 1px solid blue);
 };
 
+// MIXINS BLOCK START
+.servicesmixin {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.serviceshdrmixin {
+  border: @border;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 1.3rem;
+  font-family: 'Exo 2', sans-serif;
+  margin-left: 25px;
+}
+// MIXINS BLOCK END
+
+// ----------------
+
 // FIRST SCREEN START
 .firstscreen {
   background: @firstscreencolor;
@@ -304,7 +324,7 @@ body {
     img {
       display: none;
       align-self: flex-end;
-      margin-top: 20px;
+      margin-top: 15px;
       cursor: pointer;
       transition: @transitionfast;
       .lg-block({
@@ -323,6 +343,7 @@ body {
 // ----------------
 
 // SECOND SCREEN START
+
 .secondscreen {
   display: flex;
   justify-content: center;
@@ -340,9 +361,9 @@ body {
     width: 25%;
   }
   &__header {
-    border: @border;
+    //border: @border;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
     font-size: 2rem;
     font-family: 'Exo 2', sans-serif;
@@ -358,21 +379,12 @@ body {
     margin-top: 15px;
   }
   &__servicesdevelopment {
-    border: @border;
-    display: flex;
-    justify-content: space-between;
-    height: 50px;
+    .servicesmixin();
+    font-weight: bolder;
     background-color: @menupurple;
   }
   &__servicesdevelopmenthdr {
-    border: @border;
-    display: flex;
-    align-items: center;
-    color: white;
-    font-size: 1.3rem;
-    font-weight: bolder;
-    font-family: 'Exo 2', sans-serif;
-    margin-left: 25px;
+    .serviceshdrmixin();
   }
   &__servicesangle {
     border: @border;
@@ -382,11 +394,82 @@ body {
     background-repeat: no-repeat;
     background-size: 13%;
   }
+  &__servicesmobile {
+    .servicesmixin();
+    background-color: @graymenu;
+  }
+  &__servicesmobilehdr {
+    .serviceshdrmixin();
+    font-size: 1rem;
+  }
+  &__servicesweb {
+    .servicesmixin();
+    background-color: @graymenu;
+  }
+  &__serviceswebhdr {
+    .serviceshdrmixin();
+    font-size: 1rem;
+  }
   &__servicescrm {
-    border: @border;
+    .servicesmixin();
+    background-color: @yellowmenu;
+  }
+  &__servicescrmhdr {
+    .serviceshdrmixin();
+    font-weight: bolder;
+  }
+  &__servicespersonalcrm {
+    .servicesmixin();
+    background-color: @lightgraymenu;
+  }
+  &__servicespersonalcrmhdr {
+    .serviceshdrmixin();
+    font-size: 1rem;
+  }
+  &__servicesintegration {
+    .servicesmixin();
+    background-color: @lightgraymenu;
+  }
+  &__servicesintegrationhdr {
+    .serviceshdrmixin();
+    font-size: 1rem;
+    img {
+      margin-left: 15px;
+    }
+  }
+  &__servicesfreesetting {
+    .servicesmixin();
+    background-color: @lightgraymenu;
+  }
+  &__servicesfreesettinghdr {
+    .serviceshdrmixin();
+    font-size: 1rem;
+    img {
+      margin-left: 15px;
+    }
+  }
+  &__servicesrework {
+    .servicesmixin();
+    background-color: @lightgraymenu;
+  }
+  &__servicesreworkhdr {
+    .serviceshdrmixin();
+    font-size: 1rem;
+    img {
+      margin-left: 15px;
+    }
+  }
+
+
+
+
+
+
+  &__servicescrm {
+    //border: @border;
   }
   &__servicesdesign {
-    border: @border;
+    //border: @border;
   }
   &__development {
     //border: @border;
