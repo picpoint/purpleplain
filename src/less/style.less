@@ -13,24 +13,56 @@ body {
 };
 
 // MIXINS BLOCK START
-.servicesmixin {
+.hdrlist {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  background-color: @menupurple;
   height: 50px;
+  h1 {
+    font-size: 1.4rem;
+    font-family: 'Jura', sans-serif;
+    margin: 0 20px;
+  }
+  img {
+    margin: 0 20px;
+  }
 }
 
-.serviceshdrmixin {
-  border: @border;
+.lists {
   display: flex;
-  align-items: center;
-  color: white;
-  font-size: 1.3rem;
-  font-family: 'Exo 2', sans-serif;
-  margin-left: 25px;
+  background-color: @graymenu;
+  ul {
+    //border: @border;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  li {
+    //border: @border;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    margin: 5px 0;
+    transition: @transitionslow;
+  }
+  li:hover {
+    background-color: @menupurple;
+    transition: @transitionslow;
+  }
+  a {
+    //border: @border;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    margin: 0 20px;
+  }
 }
 // MIXINS BLOCK END
 
+
 // ----------------
+
 
 // FIRST SCREEN START
 .firstscreen {
@@ -355,7 +387,7 @@ body {
     width: 82%;
   }
   &__services {
-    border: @border;
+    //border: @border;
     display: flex;
     flex-direction: column;
     width: 25%;
@@ -372,112 +404,57 @@ body {
     color: white;
   }
   &__serviceslist {
-    border: @border;
+    //border: @border;
     display: flex;
     flex-direction: column;
-    height: 60%;
     margin-top: 15px;
+    color: white;
   }
-  &__servicesdevelopment {
-    .servicesmixin();
-    font-weight: bolder;
-    background-color: @menupurple;
+  &__devhdr {
+    .hdrlist();
   }
-  &__servicesdevelopmenthdr {
-    .serviceshdrmixin();
+  &__devlist {
+    .lists();
   }
-  &__servicesangle {
-    border: @border;
-    background-image: url("../pict/img/angle-right.svg");
-    width: 70px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 13%;
-  }
-  &__servicesmobile {
-    .servicesmixin();
-    background-color: @graymenu;
-  }
-  &__servicesmobilehdr {
-    .serviceshdrmixin();
-    font-size: 1rem;
-  }
-  &__servicesweb {
-    .servicesmixin();
-    background-color: @graymenu;
-  }
-  &__serviceswebhdr {
-    .serviceshdrmixin();
-    font-size: 1rem;
-  }
-  &__servicescrm {
-    .servicesmixin();
+
+  &__crmhdr {
+    .hdrlist();
     background-color: @yellowmenu;
   }
-  &__servicescrmhdr {
-    .serviceshdrmixin();
-    font-weight: bolder;
-  }
-  &__servicespersonalcrm {
-    .servicesmixin();
-    background-color: @lightgraymenu;
-  }
-  &__servicespersonalcrmhdr {
-    .serviceshdrmixin();
-    font-size: 1rem;
-  }
-  &__servicesintegration {
-    .servicesmixin();
-    background-color: @lightgraymenu;
-  }
-  &__servicesintegrationhdr {
-    .serviceshdrmixin();
-    font-size: 1rem;
+  &__crmlist {
+    .lists();
+    li:hover {
+      background-color: @yellowmenu;
+    }
     img {
-      margin-left: 15px;
+      margin: 0 10px;
     }
   }
-  &__servicesfreesetting {
-    .servicesmixin();
-    background-color: @lightgraymenu;
+
+  &__designhdr {
+    .hdrlist();
+    background-color: turquoise;
   }
-  &__servicesfreesettinghdr {
-    .serviceshdrmixin();
-    font-size: 1rem;
-    img {
-      margin-left: 15px;
+  &__designlist {
+    .lists();
+    li:hover {
+      background-color: turquoise;
     }
-  }
-  &__servicesrework {
-    .servicesmixin();
-    background-color: @lightgraymenu;
-  }
-  &__servicesreworkhdr {
-    .serviceshdrmixin();
-    font-size: 1rem;
     img {
-      margin-left: 15px;
+      margin: 0 10px;
     }
   }
 
 
 
 
-
-
-  &__servicescrm {
-    //border: @border;
-  }
-  &__servicesdesign {
-    //border: @border;
-  }
   &__development {
-    //border: @border;
-    width: 50%;
+    border: @border;
+    width: 55%;
   }
   &__contacts {
     //border: @border;
-    width: 25%;
+    width: 20%;
   }
 
 }
