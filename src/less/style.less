@@ -58,6 +58,20 @@ body {
     margin: 0 20px;
   }
 }
+
+.logoformenu {
+  //border: @border;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../pict/img/logo.svg");
+  background-repeat: no-repeat;
+  background-size: 90px 90px;
+  background-position: center;
+  margin-top: 20px;
+  height: 28%;
+}
+
 // MIXINS BLOCK END
 
 
@@ -208,16 +222,7 @@ body {
     });
   }
   &__logo {
-    //border: @border;
-    height: 28%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url("../pict/img/logo.svg");
-    background-repeat: no-repeat;
-    background-size: 90px 90px;
-    background-position: center;
-    margin-top: 20px;
+    .logoformenu();
     .lg-block({
       width: 60px;
       height: 60px;
@@ -268,12 +273,14 @@ body {
     width: 100%;
     font-size: 1.6rem;
     font-family: 'Exo 2', sans-serif;
+    transition: @transitionfast;
     li {
       align-self: center;
     }
     li:hover {
       border-bottom: 4px solid @purple;
       cursor: pointer;
+      transition: @transitionfast;
     }
     a {
       color: white;
@@ -452,10 +459,51 @@ body {
     border: @border;
     width: 55%;
   }
+
   &__contacts {
-    //border: @border;
+    border: @border;
     width: 20%;
   }
+  &__logo {
+    border: @border;
+    display: flex;
+    background-image: url("../pict/img/logo.svg");
+    background-repeat: no-repeat;
+    background-size: 90px 90px;
+    background-position: right;
+    height: 23%;
+  }
+  &__menu {
+    border: @border;
+    display: flex;
+    //justify-content: space-between;
+    height: 25%;
+    width: 100%;
+    color: white;
+  }
+  &__list {
+    border: @border;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    font-size: 1.6rem;
+    font-family: 'Exo 2', sans-serif;
+    transition: @transitionfast;
+    li {
+      align-self: flex-end;
+    }
+    li:hover {
+      border-bottom: 4px solid @purple;
+      cursor: pointer;
+      transition: @transitionfast;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
 
 }
 // SECOND SCREEN END
