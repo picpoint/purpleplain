@@ -400,7 +400,7 @@ body {
     width: 82%;
   }
   &__services {
-    //border: @border;
+    border: @border;
     display: flex;
     flex-direction: column;
     width: 25%;
@@ -413,7 +413,7 @@ body {
     font-size: 2rem;
     font-family: 'Exo 2', sans-serif;
     font-weight: bolder;
-    margin-top: 70px;
+    //margin-top: 70px;
     color: white;
   }
   &__serviceslist {
@@ -458,20 +458,34 @@ body {
     }
   }
 
-
   &__development {
     border: @border;
+    display: flex;
+    flex-direction: column;
     width: 55%;
+    color: white;
+  }
+  &__develophdr {
+    border: @border;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 50px;
+  }
+  &__developdescr {
+    padding: 20px 40px;
+    font-size: 1.1rem;
   }
 
   &__contacts {
-    //border: @border;
+    border: @border;
     width: 20%;
   }
   &__logo {
     .logoformenu();
+    margin: 0;
     background-position: right;
-    height: 23%;
+    height: 12%;
+    background-position: top right;
   }
   &__menu {
     //border: @border;
