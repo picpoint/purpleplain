@@ -12,12 +12,16 @@ function readDataJson() {
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   xhr.addEventListener('readystatechange', () => {
     if(xhr.readyState == 4 && xhr.status == 200) {
-      console.log(xhr.responseText);
+      //console.log(xhr.responseText);
+      let jsonData = JSON.parse(xhr.responseText);
+      console.log(jsonData);
     }
   })
 
   xhr.send();
+
 }
 
-readDataJson;
+readDataJson();
 
+//devModile.addEventListener('mouseover');
