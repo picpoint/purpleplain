@@ -6,6 +6,8 @@
 
 body {
   box-sizing: border-box;
+  perspective: 3000px;
+  perspective-origin: center 30em;
 }
 
 .debug{
@@ -45,6 +47,7 @@ body {
     height: 40px;
     margin: 5px 0;
     transition: @transitionslow;
+    cursor: pointer;
   }
   li:hover {
     background-color: @menupurple;
@@ -468,12 +471,66 @@ body {
   &__develophdr {
     border: @border;
     font-size: 2.5rem;
+    font-weight: bold;
     text-align: center;
     margin-top: 50px;
   }
   &__developdescr {
+    border: @border;
+    margin-top: 30px;
     padding: 20px 40px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    text-align: justify;
+  }
+  &__cube {
+    border: @border;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  &__cubeblock {
+    //border: @border;
+    transform-style: preserve-3d;
+    animation: rotate 40s infinite linear;
+    height: 200px;
+    width: 200px;
+  }
+  &__side {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+  }
+  .one {
+    transform: translateZ(-6.3em);
+    background: @purple;
+    opacity: 0.5;
+  }
+  .two {
+    transform: translateX(-6.3em) rotateY(90deg);
+    background: @purple;
+    opacity: 0.5;
+  }
+  .three {
+    transform: translateX(6.3em) rotateY(90deg);
+    background: @purple;
+    opacity: 0.5;
+  }
+  .four {
+    transform: translateX(0em) rotateY(0deg);
+    transform: translateZ(6.3em);
+    background: @purple;
+    opacity: 0.5;
+  }
+  .five {
+    transform: translateY(-6.3em) rotateX(90deg);
+    background: @purple;
+    opacity: 0.5;
+  }
+  .six {
+    transform: translateY(6.3em) rotateX(90deg);
+    background: @purple;
+    opacity: 0.5;
   }
 
   &__contacts {
@@ -542,3 +599,11 @@ body {
 
 }
 // SECOND SCREEN END
+
+
+
+@keyframes rotate {
+  100% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
