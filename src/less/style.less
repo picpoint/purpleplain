@@ -181,6 +181,31 @@ body {
     }
 }
 
+.solomenumixin {
+  //border: @border;
+  display: none;
+  color: white;
+  font-family: 'Exo 2', sans-serif;
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    .md-block({
+      display: none;
+    });
+  }
+  span {
+    margin: 0 40px;
+    font-size: 1.1rem;
+    border-bottom: 1px solid white;
+    font-weight: bolder;
+  }
+  .lg-block({
+    display: flex;
+    align-self: center;
+  });
+}
+
 // MIXINS BLOCK END
 
 
@@ -350,28 +375,7 @@ body {
     });
   }
   &__solomenu {
-    //border: @border;
-    display: none;
-    color: white;
-    font-family: 'Exo 2', sans-serif;
-    a {
-      color: white;
-      text-decoration: none;
-      font-size: 1rem;
-      .md-block({
-        display: none;
-      });
-    }
-    span {
-      margin: 0 40px;
-      font-size: 1.1rem;
-      border-bottom: 1px solid white;
-      font-weight: bolder;
-    }
-    .lg-block({
-      display: flex;
-      align-self: center;
-    });
+    .solomenumixin();
   }
   &__list {
     .menulists();
@@ -397,7 +401,7 @@ body {
   display: flex;
   justify-content: center;
   background-color: @firstscreencolor;
-  height: 100vh;
+  //height: 1000px;
   &__wrap {
     border: @border;
     display: flex;
@@ -406,6 +410,9 @@ body {
     .xxl-block({
       width: 95%;
       transition: @transitionslow;
+    });
+    .lg-block({
+      flex-direction: column-reverse;
     });
   }
   &__services {
@@ -636,6 +643,10 @@ body {
     .xxl-block({
       width: 20%;
     });
+    .lg-block({
+      display: flex;
+      width: 100%;
+    });
   }
   &__logo {
     .logoformenu();
@@ -649,6 +660,12 @@ body {
       background-size: 80px 80px;
       transition: @transitionfast;
     });
+    .lg-block({
+      background-size: 50px 50px;
+      background-position: left;
+      height: 50px;
+      width: 20%;
+    });
   }
   &__menu {
     //border: @border;
@@ -656,9 +673,12 @@ body {
     height: 25%;
     width: 100%;
     color: white;
+    .lg-block({
+      display: block;
+    });
   }
   &__list {
-    border: @border;
+    //border: @border;
     .menulists();
     display: flex;
     justify-content: space-between;
@@ -672,6 +692,9 @@ body {
     .xl-block({
       font-size: 1.2rem;
     });
+    .lg-block({
+      display: none;
+    });
   }
   &__sendreq {
     //border: @border;
@@ -680,7 +703,10 @@ body {
     width: 100%;
     height: 23%;
     margin: 0;
-    transition: @transitionfast;
+    transition: @transitionfast;    
+    .lg-block({
+      display: none;
+    });
     a {
       align-self: flex-end;
       transition: @transitionfast;
@@ -713,7 +739,9 @@ body {
   &__socialnetwork {
     display: flex;
     height: 15%;
-    //flex-direction: column;
+    .lg-block({
+      display: none;
+    });
   }
   &__listsn {
     //border: @border;
@@ -733,6 +761,18 @@ body {
         transition: @transitionfast;
       });
     }
+  }
+
+  &__solomenu {
+    border: @border;
+    .solomenumixin();
+    display: none;
+    justify-content: flex-end;
+    width: 60%;
+    .lg-block({
+      display: flex;
+    });
+        
   }
 
 
